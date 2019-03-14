@@ -7,14 +7,14 @@
                         {{ contact.name[0]}}
                     </div>
                 </div>
-                <div class="col-4" >
+                <div class="col-4 " >
                     <div>{{ contact.name }}</div>
                 </div>
             </div>
         </div>
         <hr>
         <div class="contact pl-5" >Contact Detail.</div>
-        <div class="row align-items-center pl-5">
+        <div class="row align-items-center pl-5 pb-3">
             <div class="col-1">
                 <i class="mdi mdi-email-outline"/>
             </div>
@@ -22,7 +22,7 @@
                 <div>{{ contact.email }}</div>
             </div>
         </div>
-        <div class="row align-items-center pl-5">
+        <div class="row align-items-center pl-5 pb-3">
             <div class="col-1">
                 <i class="mdi mdi-domain"/>
             </div>
@@ -31,7 +31,7 @@
             </div>
         
         </div>
-        <div class="row align-items-center pl-5">
+        <div class="row align-items-center pl-5 pb-3">
             <div class="col-1">
                 <i class="mdi mdi-phone"/>
             </div>
@@ -101,15 +101,18 @@ export default {
 .profile{
     border-radius: 50%;
     background-color: blue;
-    max-width: 50px;
-    max-height: 50px;
-    size: 10px;
+    width: 70px;
+    height: 70px;
+    /* size: 60px; */
     /* display: flex;
     justify-content: center; */
     /* vertical-align: middle; */
     /* position: absolute; */
     position: relative;
-    padding-left: 14px;
+    top: 6px;
+
+    padding-left: 27px;
+    padding-top: 13px;;
     color: white;
 
 }

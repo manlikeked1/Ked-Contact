@@ -32,16 +32,21 @@
      <div class="col-1">
       <span class="bell"> <i class="mdi mdi-bell" /></span>
     </div>
+    <div class="profile ">
+      E
+    </div>
   </div>
 </nav>
 </template>
     
 <script>
 export default {
+  
   data (){
     return {
       searchInput:''
     }
+    
   },
   methods: {
     toggleSidebar(){
@@ -51,7 +56,8 @@ export default {
     updateSearchInput() {
       this.$store.commit('updateSearchInput', this.searchInput)
     }
-  }
+  },
+  
   
 }
 </script>
@@ -130,17 +136,30 @@ export default {
   /* height: 20rem; */
   /* justify-content: center; */
 } 
-
-
-
-
 .navbar{
     display:flex;
     justify-content: center;
     background-color: white;
 } 
+.profile{
+    border-radius: 50%;
+    background-color: blue;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    padding-left: 9px;
+    padding-bottom: 13px !;
+    color: white;
+    font-size: 25px;
+    right: 14px;
+    top: 17px;
 
-
+}
 </style>
+
+
+
+
+
 
 

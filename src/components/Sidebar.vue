@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-12">
                 <router-link to='/create' exact>
-                    <div class="create px-4 mb-4 mt-3">
+                    <div class="create px-1 mb-4 mt-3">
                     <button class="btn btn shadow">
                         <svg width="36" height="36" viewBox="0 0 36 36">
                         <path fill="#34A853" d="M16 16v14h4V20z"></path>
@@ -24,7 +24,7 @@
                 <router-link tag="div" class="one" active-class="active" to='/contacts' exact>
                     <span> <i class="mdi mdi-account-outline px-3"></i> </span>
                     <span class="pl-1">Contacts </span>
-                    <span class="pl-5">{{contacts.length}}</span>
+                    <span class="length">{{contacts.length}}</span>
                     <!-- <span class="pl-3">{{contacts.length}}</span> -->
                 </router-link>
             </div>
@@ -57,13 +57,14 @@ export default {
 
 <style scoped>
 .one:hover{
-    background-color: rgb(236, 230, 230);
+    background-color: rgb(247, 240, 240);
     border-radius: 0 25px 25px 0;
 }
 
 .one.active{
     background-color: #e8f0fe;
     border-radius: 0 25px 25px 0;
+    color: #1a73e8;
 }
     /* padding-right: 100px; */ 
 .one{
@@ -71,7 +72,7 @@ export default {
     padding: 10px;
     border-radius: 50%;
 }.sidebar{
-    max-width: 270px;
+    min-width: 300px;
     /* margin: 20px; */
     /* padding-left: 20px; */
     position: fixed;
@@ -80,19 +81,28 @@ export default {
     font-family:sans-serif;
     margin-top: 60px;
 }
+
+
 .btn{
-    padding: 12px;
+    /* padding: 12px; */
     border-radius: 25px 25px 25px 25px;
     /* border-inline-start: 2px; */
     border-style: solid;
+    min-width: 200px;
     /* border-width: medium; */
 }
+.length {
+ padding-left: 9rem;
+}
+   
+
 .mdi{
     color: grey;
 }
 .mdi::before{
     font-size: 20px;
 }
+
 </style>
  
  

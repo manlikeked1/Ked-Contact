@@ -6,6 +6,7 @@ import Welcome  from '@/components/Welcome';
 import Create  from '@/components/Create';
 import ContactDetails from '@/components/ContactDetails';
 import Trash from '@/components/Trash';
+import MoreFields from'@/components/MoreFields'
 // import Notebooks from '@/components/Notebooks';
 // import ProductItem from '@/components/ProductItem';
 // import Cart from '@/components/Cart';
@@ -42,7 +43,14 @@ export default new Router({
           path: 'trash',
           name: 'trash',
           component: Trash,
-        }
+        },
+        {
+          path: 'morefields',
+          name:'morefields',
+          component: MoreFields,
+        },
+        
+
       ],
     },
     

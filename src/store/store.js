@@ -7,11 +7,11 @@ export const store = new Vuex.Store ({
     state: {
         sidebarStatus: true,
         contacts : [
-            {name:'Ebube Donald',email:'donaldebube@yahoo.com',phone:'08034345445',company:'PWC',jobTitle:'HR'},
-            {name:'Gideon Peters',email:'giddyboy@yahoo.com',phone:'08034345445',company:'Reftek',jobTitle:'HR'},
-            {name:'Raymond Ativie',email:'raytest@yahoo.com',phone:'08034345445',company:'Reftek',jobTitle:'HR'},
-            {name:'Anesi Igebu',email:'gabby@yahoo.com',phone:'08034345445',company:'Reftek',jobTitle:'HR'},
-            {name:'Nifemi Gbamboye',email:'bambam@yahoo.com',phone:'08034345445',company:'Reftek',jobTitle:'HR'},
+            {name:'Ebube Kenechukwu Donald',email:'donaldebube@yahoo.com',phone:'08034345445',company:'PWC',jobTitle:'HR'},
+            {name:'Gideon Oj Peters',email:'giddyboy@yahoo.com',phone:'08034345445',company:'Reftek',jobTitle:'HR'},
+            {name:'Raymond P Ativie',email:'raytest@yahoo.com',phone:'08034345445',company:'Reftek',jobTitle:'HR'},
+            {name:'Anesi Gabby Igebu',email:'gabby@yahoo.com',phone:'08034345445',company:'Reftek',jobTitle:'HR'},
+            {name:'Nifemi H Gbamboye',email:'bambam@yahoo.com',phone:'08034345445',company:'Reftek',jobTitle:'HR'},
           ],  
         trash:[],  
         search : '',

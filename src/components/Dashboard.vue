@@ -29,7 +29,7 @@ export default {
 
 <style scoped>
 .bring-down{
-    margin-top: 90px;
+    margin-top: 80px;
     padding-right: 40px;
 }
 </style>

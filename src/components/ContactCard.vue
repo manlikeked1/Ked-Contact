@@ -1,9 +1,13 @@
 <template>
-<div class="contact-card mb-3"  :style="{backgroundColor: definedColor, borderLeft: selectBorder}" @mouseover="changedColor" @mouseout="removeColor">
-  <div class="row pl-3 pt-2 align-items-center" >
+<div class="contact-card mb-3"  :style="{backgroundColor: definedColor, borderLeft: selectBorder}" @mouseover="changedColor" @mouseleave="removeColor">
+  <div class="row pl-3 py-2 align-items-center" >
     <div class="col-1">
-      <div class="profile " :style="{backgroundColor: randomColor}">
+      <div class="profile " :style="{backgroundColor: randomColor}" v-if="(hovering !== 1)">
         {{ donald.name[0] }}
+      </div>
+      <div v-else class="py-2">
+        <!-- <v-checkbox hide-details></v-checkbox> -->
+        <input type="checkbox"  class="checkbox"/>
       </div>
     </div>
     <div class="col-3" @click="navigateToContact">
@@ -20,9 +24,11 @@
     </div>
     <div class="col-md-2">
       <div class="zoom pl-5">
-        <span v-if="(hovering === 1)"><i class="mdi mdi-star-outline pr-3"></i></span>
-        <span v-if="(hovering === 1)"><i class="mdi mdi-pencil-outline pr-3"></i></span>
-        <span v-if="(hovering === 1)"><i class="mdi mdi-dots-vertical pr-3" @click="toggleOption"></i></span>
+        <template v-if="(hovering === 1)">
+        <span><i class="mdi mdi-star-outline pr-3"></i></span>
+        <span><i class="mdi mdi-pencil-outline pr-3"></i></span>
+        <span><i class="mdi mdi-dots-vertical pr-3" @click="toggleOption"></i></span>
+        </template>
       </div>
       <div class="options position-absolute bg-white rounded shadow-lg" @click="deleteContact" v-if="option">
         <div class="p-4"><i class="mdi mdi-trash-can-outline">Trash</i></div>
@@ -45,6 +51,7 @@ export default {
       selectBorder: '',
       colorCache:{},
       option: false,
+     
     }
   },
   computed: {
@@ -57,9 +64,9 @@ export default {
       
 
       return `rgb(${r1}, ${r2}, ${r}, ${r3})`;
-      // return (this.colorCache[id] = `rgb(${r1}, ${r2}, ${r3}`);
     },
   },
+  
   methods: {
     changedColor(){
       // console.log('yoooooo')
@@ -85,6 +92,7 @@ export default {
     }
     
   }
+   
 }
 </script>
 
@@ -109,12 +117,12 @@ export default {
     background-color: blue;
     width: 35px;
     height: 35px;
-    size: 40px;
     position: relative;
-    padding-left: 9.5px;
     color: white;
     font-size: 25px;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .options{
   max-height: 4rem;
@@ -124,6 +132,10 @@ export default {
 .zoom {
   z-index: 99999;
   font-size: 20px;
+  color: rgb(182, 179, 179)
+}
+.checkbox {
+  size: 90px;
 }
   
 

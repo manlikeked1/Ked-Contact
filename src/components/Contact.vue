@@ -15,6 +15,9 @@
       <div class="col-1">
        Company
       </div>
+      <div class="dots col-2">
+        <span><i class="mdi mdi-dots-vertical pr-5"></i></span>
+      </div>
     </div>
   </div>
   <div class="title">CONTACTS ({{contacts.length}})</div>
@@ -51,11 +54,11 @@ export default {
 }
 .title {
   font-size: 12px !important;
-  color: rgb(175, 171, 171);
+  color: rgb(32, 32, 32);
   padding-left: 14px;
   padding-bottom: 14px;
   padding-top: 10px;
-  font-weight: bold;
+  
   /* border-bottom:0.2px solid whitesmoke !important; */
 }
 .header {
@@ -63,11 +66,17 @@ export default {
   border-bottom: solid 0.2px ;
   border-bottom-color: whitesmoke!important;
   padding-bottom: 20px;
+  font-weight: bold ;
+  color: rgb(95, 94, 94)
   
 }
 .con {
   padding-left: 10px;
   color: rgb(184, 180, 180);
+}
+.dots{
+  padding-left: 130px;
+  font-size: 20px;
 }
   
 
