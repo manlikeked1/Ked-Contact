@@ -67,7 +67,7 @@ export default {
   border-bottom-color: whitesmoke!important;
   padding-bottom: 20px;
   font-weight: bold ;
-  color: rgb(95, 94, 94)
+  color: rgb(88, 87, 87)
   
 }
 .con {

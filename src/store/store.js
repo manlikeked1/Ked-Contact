@@ -7,11 +7,11 @@ export const store = new Vuex.Store ({
     state: {
         sidebarStatus: true,
         contacts : [
-            {name:'Ebube Kenechukwu Donald',email:'donaldebube@yahoo.com',phone:'08034345445',company:'PWC',jobTitle:'HR'},
-            {name:'Gideon Oj Peters',email:'giddyboy@yahoo.com',phone:'08034345445',company:'Reftek',jobTitle:'HR'},
-            {name:'Raymond P Ativie',email:'raytest@yahoo.com',phone:'08034345445',company:'Reftek',jobTitle:'HR'},
-            {name:'Anesi Gabby Igebu',email:'gabby@yahoo.com',phone:'08034345445',company:'Reftek',jobTitle:'HR'},
-            {name:'Nifemi H Gbamboye',email:'bambam@yahoo.com',phone:'08034345445',company:'Reftek',jobTitle:'HR'},
+            {name:'Ebube Donald', email: 'donaldebube@yahoo.com', company: 'Reftek Consulting', jobTitle: 'Student', phone: '+234 937 483 2932', address:'Lagos, Nigeria'},
+            {name:'Ebube Amanda', email: 'amandaebube@yahoo.com', company: 'Shell Ltd', jobTitle: 'HR', phone: '+234 937 483 2932', address:'Abuja, Nigeria'},
+            {name:'Igebu Anesi', email: 'anesiigebu@yahoo.com', company: 'Reftek Ltd', jobTitle: 'Developer', phone: '+234 937 483 2932', address:'Ogun, Nigeria'},
+            {name:'Peters Gideon', email: 'petergideon@yahoo.com', company: 'ConcoilLtd', jobTitle: 'CTO', phone: '+234 937 483 2932', address:'Kaduna, Nigeria'},
+            {name:'Ebube Donald', email: 'donaldebube@yahoo.com', company: 'Dickerson Ltd', jobTitle: 'Student', phone: '+234 937 483 2932', address:'Lagos, Nigeria'}
           ],  
         trash:[],  
         search : '',
@@ -61,6 +61,13 @@ export const store = new Vuex.Store ({
             })
             state.trash.push(contact)
             state.contacts.splice(state.contacts.indexOf(contact),1)
+        },
+        deletedContact: (state, payload) => {
+            var contact = state.contacts.find(contact => {
+                return contact == payload;
+            })
+            // state.trash(contact)
+            state.trash.splice(state.trash.indexOf(contact),1)
         },
         updateSearchInput: (state,payload) => {
             state.search = payload.toLowerCase()

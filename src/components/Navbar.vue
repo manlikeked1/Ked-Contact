@@ -1,6 +1,6 @@
 <template>
 
-<nav class="navbar sticky-top bg-transparent">
+<nav class="navbar fixed-top bg-white">
   
   <div class="row">
     <div class="col-md-1">
@@ -41,7 +41,6 @@
     
 <script>
 export default {
-  
   data (){
     return {
       searchInput:''
@@ -57,15 +56,13 @@ export default {
       this.$store.commit('updateSearchInput', this.searchInput)
     }
   },
-  
-  
 }
 </script>
-<style scoped>
 
+<style scoped>
 .mdi-bell::before{
   color: white !important;
-  position: absolute;
+  position:relative;;
   left: 680px;
   top: 9px;
   border-radius: 50%;
@@ -74,22 +71,26 @@ export default {
   text-align: center;
   background-color: lightgrey;
 }
+
 .app {
   position: absolute;
   left: 670px;
   top: 6px;
   /* background-color: black; */
 }
+
 .toggle {
   position: absolute;
   left: -605px; 
   top: 6px
   /* margin-bottom: 60px; */
 }
+
 .input-group-text{
   border: none;
   background-color: whitesmoke;
 }
+
 .mdi-account-circle::before {
   position: absolute;
   left:-600px;
@@ -99,19 +100,17 @@ export default {
   border: 50px;
   border-color: rgb(119, 119, 228);
 }
+
 .navbar-brand {
   font-size: 25px;
   color: rgb(175, 168, 168) !important;
   position: absolute;
   left: -580px;
   /* bottom: 9px; */
-  
-
 }
+
 .mdi{
   font-size:25px;
-  
-  
   color: rgb(214, 210, 210)!important;
   /* background-color: whitesmoke; */
 }
@@ -121,39 +120,41 @@ export default {
   color: whitesmoke;
   background-color:whitesmoke;
   border: none;
-  
 }
+
 .form{
   display: flex;
   /* margin-left: 80px; */
   justify-content: center;
   position: absolute;
   left:-350px;
-  width: 45rem;
-  
+  width: 45rem; 
   background-color: whitesmoke;
   border: none;
   /* height: 20rem; */
   /* justify-content: center; */
 } 
+
 .navbar{
     display:flex;
     justify-content: center;
     background-color: white;
+    z-index: 999999999;
+    /* margin-bottom: 90px; */
 } 
-.profile{
-    border-radius: 50%;
-    background-color: blue;
-    width: 35px;
-    height: 35px;
-    position: absolute;
-    padding-left: 9px;
-    padding-bottom: 13px !;
-    color: white;
-    font-size: 25px;
-    right: 14px;
-    top: 17px;
 
+.profile{
+  border-radius: 50%;
+  background-color: blue;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  padding-left: 9px;
+  padding-bottom: 13px !;
+  color: white;
+  font-size: 25px;
+  right: 14px;
+  top: 17px;
 }
 </style>
 

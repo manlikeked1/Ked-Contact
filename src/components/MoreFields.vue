@@ -73,36 +73,36 @@
             <v-layout row align-items-center @mouseover="display" @mouseleave="hide">
                 <v-flex xs6 sm3 md1 ></v-flex>
                 <v-flex md9 >
-                    <v-text-field v-model="phoneticFirst"
-                    label="Phonetic First">
+                    <v-text-field v-model="address"
+                    label="address">
                     </v-text-field>
                 </v-flex>
                 <v-flex v-if="(hovering === 1)">
-                    <i class="mdi mdi-close-circle-outline" @click = "clear('phoneticFirst')" data-toggle="popover" ata-placement="top" 
+                    <i class="mdi mdi-close-circle-outline" @click = "clear('address')" data-toggle="popover" ata-placement="top" 
                     title="Remove" data-content="Popup content"></i>
                 </v-flex>
             </v-layout>
             <v-layout row align-items-center @mouseover="display" @mouseleave="hide">
                 <v-flex xs6 sm3 md1 ></v-flex>
                 <v-flex md9 >
-                    <v-text-field v-model="phoneticMiddle"
-                    label="Phonetic Middle">
+                    <v-text-field v-model="country"
+                    label="Country">
                     </v-text-field>
                 </v-flex>
                 <v-flex v-if="(hovering === 1)">
-                    <i class="mdi mdi-close-circle-outline" @click = "clear('phoneticMiddle')" data-toggle="popover" ata-placement="top" 
+                    <i class="mdi mdi-close-circle-outline" @click = "clear('country')" data-toggle="popover" ata-placement="top" 
                     title="Remove" data-content="Popup content"></i>
                 </v-flex>
             </v-layout>
             <v-layout row align-items-center @mouseover="display" @mouseleave="hide">
                 <v-flex xs6 sm3 md1 ></v-flex>
                 <v-flex md9 >
-                    <v-text-field v-model="phoneticLast"
-                    label="Phonetic Last">
+                    <v-text-field v-model="relationship"
+                    label="Relationship">
                     </v-text-field>
                 </v-flex>
                 <v-flex v-if="(hovering === 1)">
-                    <i class="mdi mdi-close-circle-outline" @click = "clear('phoneticLast')" data-toggle="popover" ata-placement="top" 
+                    <i class="mdi mdi-close-circle-outline" @click = "clear('relationship')" data-toggle="popover" ata-placement="top" 
                     title="Remove" data-content="Popup content"></i>
                 </v-flex>
             </v-layout>
@@ -149,7 +149,7 @@
             <div class="row">
                 <div class="col-10 pt-3">
                     <router-link to="/create" exact>
-                        Fewer fields.
+                        <span class="save-contact">Fewer fields.</span>
                     </router-link>
                 </div>
                  <div @click="cancel" class="col-1 pt-3">
@@ -180,16 +180,13 @@ export default {
             prefix:'',
             middleName: '',
             suffix:'',
-            phoneticFirst:'',
-            phoneticMiddle: '',
-            phoneticLast: '',
+            address:'',
+            country: '',
+            relationship: '',
             nickname: '',
-            
+            company: '',
         }
-        
-    },
-
-             
+    },        
     methods: {
         saveContact() {
             // console.log(pogo);
@@ -200,9 +197,15 @@ export default {
                 email: this.email,
                 phone: this.phone,
                 notes: this.notes,
-
-
+                city: this.city,
+                prefix: this.prefix,
+                suffix: this.suffix,
+                address: this.address,
+                country: this.country,
+                nickname: this.nickname,
+                relationship:this.relationship,
             }
+
             this.$store.commit('createNewContact', contactInfo)
             this.$router.push({ name: 'contacts.all'});
         },
@@ -216,9 +219,9 @@ export default {
             this.notes = ''
             this.prefix = ''
             this.suffix = ''
-            this.phoneticFirst = ''
-            this.phoneticMiddle = ''
-            this.phoneticLast = ''
+            this.address = ''
+            this.country = ''
+            this.relationship= ''
             this.nickname = ''
 
         },
@@ -251,19 +254,18 @@ export default {
                 case 'suffix':
                 this.suffix = ''
                 break;
-                case 'phoneticFirst':
-                this.phoneticFirst = ''
+                case 'address':
+                this.address = ''
                 break;
-                case 'phoneticMiddle':
-                this.phoneticMiddle = ''
+                case 'country':
+                this.country = ''
                 break;
-                case 'phoneticLast':
-                this.phoneticLast= ''
+                case 'relationship':
+                this.relationship= ''
                 break;
                 case 'nickname':
                 this.nickname= ''
                 break;
-
             }
         },
         display () {
@@ -271,9 +273,8 @@ export default {
         },
         hide () {
             this.hovering = 0
-        }
+        },
     }
-    
 }
 
                 
@@ -282,6 +283,14 @@ export default {
 </script>
 
 <style scoped>
+.save-contact{
+    cursor: pointer;
+}
+.save-contact:hover{
+    background-color: #f9fafc;
+    /* border-radius: 0 25px 25px 0; */
+    color: #1a73e8;
+}
 .header {
     font-size: 20px;
 }
@@ -308,5 +317,6 @@ export default {
     font-size: 30px;
     color: rgb(224, 220, 220)
 }
+
 
 </style>

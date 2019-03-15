@@ -89,7 +89,7 @@
         <div class="row">
             <div class="col-10 pt-3">
                 <router-link to="/morefields" exact>
-                    More Fields.
+                    <span class="save-contact">More Fields.</span>
                 </router-link>
             </div>
             <div @click="cancel" class="col-1 pt-3">

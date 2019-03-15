@@ -42,7 +42,7 @@
 <script>
 export default {
   props: [
-    'donald',
+    'donald', 'deleteTotal'
   ],
   data() {
     return {
@@ -66,7 +66,6 @@ export default {
       return `rgb(${r1}, ${r2}, ${r}, ${r3})`;
     },
   },
-  
   methods: {
     changedColor(){
       // console.log('yoooooo')
@@ -85,7 +84,12 @@ export default {
       this.$router.push({ name: 'contacts.details', params: {name: this.donald.name}, })
     },
     deleteContact (){
-      this.$store.commit('deleteContact',this.donald)
+      if(this.$router.currentRoute.name == 'contacts.all') {
+        this.$store.commit('deleteContact',this.donald)
+      } else if(this.$router.currentRoute.name == 'trash'){
+        this.deleteTotal();
+      }
+      // console.log(this.$router.currentRoute.name);
     },
     toggleOption () {
       this.option = !this.option
@@ -128,6 +132,8 @@ export default {
   max-height: 4rem;
   max-width: 13rem;
   z-index: 9999;
+  position: relative;
+  left: 60px;
 }
 .zoom {
   z-index: 99999;

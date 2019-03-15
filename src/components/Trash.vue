@@ -19,7 +19,7 @@
   </div>
   <div class="row">
     <div class="col-12" v-for="contact in contacts" :key="contact.id">
-        <contact-card :donald="contact"/>
+        <contact-card :donald="contact" :deleteTotal="deletedContact"/>
     </div>
   </div>
 </div>
@@ -32,9 +32,14 @@ export default {
         ContactCard,
     },
     computed:{
-        contacts() {
-            return this.$store.getters.getFilteredContacts('deletedContacts');
-    }
+      contacts() {
+        return this.$store.getters.getFilteredContacts('deletedContacts');
+      }
+    },
+    methods: {
+      deletedContact (){
+      this.$store.commit('deletedContact',this.contact)
+    },
     }
     
 }

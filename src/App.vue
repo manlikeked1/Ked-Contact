@@ -1,7 +1,15 @@
 <template>
   <div id="app">
-    <navbar/>
-      <router-view />
+    <div class="row">
+      <div class="col">
+        <navbar/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <router-view />
+      </div>
+    </div>
   </div>
 </template>
 

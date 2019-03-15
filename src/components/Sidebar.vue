@@ -34,6 +34,7 @@
                 <router-link tag='div' class="one" active-class="active" to='/trash' exact>
                     <span> <i class="mdi mdi-trash-can-outline px-3"></i> </span>
                     <span class="pl-1">Deleted Contacts</span>
+                    <span class="item" v-if="trash.length>0">{{trash.length}}</span>
                 </router-link>
             </div>
         </div>
@@ -49,6 +50,9 @@ export default {
         },
         contacts () {
             return this.$store.getters.getContacts;
+        },
+        trash () {
+            return this.$store.state.trash;
         }
 
     }
@@ -92,7 +96,10 @@ export default {
     /* border-width: medium; */
 }
 .length {
- padding-left: 9rem;
+    padding-left: 9rem;
+}
+.item {
+    padding-left: 5.5rem;
 }
    
 
